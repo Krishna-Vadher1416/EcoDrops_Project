@@ -1,3 +1,17 @@
+import os
+
+# Set Streamlit to use local folder for config
+os.environ["XDG_CONFIG_HOME"] = os.getcwd()
+os.environ["STREAMLIT_HOME"] = os.getcwd()
+
+# Create .streamlit directory if it doesn't exist
+if not os.path.exists(".streamlit"):
+    os.makedirs(".streamlit")
+
+# Create config.toml file to disable usage stats
+with open(".streamlit/config.toml", "w") as f:
+    f.write("[browser]\ngatherUsageStats = false\n")
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
