@@ -4,7 +4,7 @@ seaborn
 pandas
 plotly
 scikit-learn
-tensorflow>=2.10.1
+tensorflow<=2.10.1
 
 
 
